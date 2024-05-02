@@ -1,0 +1,1 @@
+<!-- Exercice en AJAX fetch API, exercice n°0 -->
