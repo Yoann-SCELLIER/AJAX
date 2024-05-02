@@ -1,0 +1,7 @@
+// Création d'un JSON contenant des informations en "dur".
+{
+    "nom": "Robert",
+    "age": 50,
+    "ville": "Marseille"
+  }
+  

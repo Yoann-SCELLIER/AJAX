@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercice AJAX avec Fetch API exercice</title>
+</head>
+
+<body>
+
+  <!-- Création d'un bouton contenant un ID qui sera rappelé plus tard -->
+  <button id="btnGetData">Obtenir les données</button>
+
+  <!-- Création du début d'un script -->
+  <script>
+
+    // Création d'un événement d'écoute sur l'ID du bouton au click qui envoie à la fonction "getData".
+    document.getElementById('btnGetData').addEventListener('click', getData);
+
+    // Création d'une fonction qui récupére les données envoyé de l'événement d'écoute.
+    function getData() {
+
+      // J'envoie avec "fetch" une requête "GET" dans le fichier "data.json" et attend la vérification si dessous.
+      fetch('data.json')
+
+        // Je récupére avec "then" la réponse.
+        .then(response => {
+
+          // "si" la vérification de la réponse et mauvaise "!" (vérification) response (réponse) :
+          if (!response.ok) {
+
+            // Alors je déclanche le message d'erreur dans le console.log.
+            throw new Error('Erreur de récupération des données');
+          }
+
+          // je retourne la réponse si c'est ok avec la méthode "then" qui sera afficher dans le console.log.
+          return response.json();
+        })
+        .then(data => {
+          console.log(data);
+        })
+
+        
+        // Je capture avec catch et affiche l'erreur dans le console.log.
+        .catch(error => {
+          console.error('Erreur :', error);
+        });
+    }
+
+    // REMARQUE, les . avant "then" et "catch" son des points de chainage, se qui veux dire que quand la fonction "getData" et envoyé en "fetch", elle
+    // passe avant tout au 1° "then" pour vérifier si c'est "ok" ou "erreur", et l'envoi au 2° then si c'est "ok" ou alors le capture avec "catch".
+    
+  </script>
+
+</body>
+
+</html>
