@@ -23,44 +23,60 @@
     </form>
 
     <script>
-        // API : https://reqres.in/api/users
+    // Lien API pour exercice : https://reqres.in/api/users
 
-        document.getElementById('userForm').addEventListener('submit', submitForm);
+    // création d'un écouteur d'événement sur l'ID du formulaire sur le bouton "submit" nommé en "submitForm" pour la fonction
+    document.getElementById('userForm').addEventListener('submit', submitForm);
 
-        function submitForm(event) {
-            event.preventDefault();
+    // création d'une fonction qui reprend le nommage "submitForm"
+    function submitForm(event) {
 
-            const formData = new FormData(value.target);
-            const name = formData.get('name');
-            const email = formData.get('email');
-            const message = formData.get('message');
-            const userData = {name, email, message}
+        // Empêche le comportement par défaut de soumission du formulaire (rechargement de la page)
+        event.preventDefault();
 
-            if(!name || !email || !message) {
-                alert('Veuillez remplir les champs')
-                return;
-            };
+        // Création de constantes pour récupérer les valeurs des champs de formulaire
+        const formData = new FormData(event.target);
+        const name = formData.get('name');
+        const email = formData.get('email');
+        const message = formData.get('message');
+        const userData = {name, email, message};
 
-            fetch('https://reqres.in/api/users', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(userData)
-            })
-            .then(response => {
-                if(!response.ok) {
-                    throw new Error('Erreur')
-                }
-                return response.json()
-            })
-            .then(user => {
-                console.log('Utilisateur trouvé')
-            })
-            .catch(error => {
-                console.log('Erreur en cours...')
-            });
+        // Vérification si les champs "nom", "email", "message" sont vides
+        if(!name || !email || !message) {
+
+            // Affichage d'une alerte si les champs sont vides
+            alert('Champs vide, veuillez les remplirs!');
+            return;
         }
-    </script>
+
+        // Envoi d'une requête POST vers le lien API spécifié
+        fetch('https://reqres.in/api/users', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(userData) 
+        })
+
+        // Gestion de la réponse de la requête
+        .then(response => {
+            if(!response.ok) {
+                throw new Error('Erreur');
+            }
+            return response.json();
+        })
+
+        // Affichage d'un message lorsque l'utilisateur est trouvé
+        .then(user => {
+            console.log('Utilisateur trouvé');
+        })
+
+        // Capture et affichage des erreurs
+        .catch(error => {
+            console.log('Erreur en cours...');
+        });
+    }
+</script>
+
 </body>
 </html>
