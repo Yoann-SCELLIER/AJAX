@@ -27,9 +27,9 @@
         // API : https://reqres.in/api/users
         // Code Regex : /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
-        // fonction REGEX pour le mail
+        // fonction REGEX pour le mail, seulement (Gmail, Outlook, Hotmail, Yahou) son accepté
         function isValidEmail(email) {
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const emailRegex = /^[^\s@]+@(gmail|outlook|hotmail|yahoo)(\.[a-zA-Z0-9À-ÿ\-_\.]{1,3})?$/;
             return emailRegex.test(email);
         }
 
