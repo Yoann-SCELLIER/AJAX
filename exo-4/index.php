@@ -27,9 +27,8 @@
         // API : https://reqres.in/api/users
         // Code Regex : /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
-        // fonction REGEX pour le mail, seulement (Gmail, Outlook, Hotmail, Yahou) son accepté
         function isValidEmail(email) {
-            const emailRegex = /^[^\s@]+@(gmail|outlook|hotmail|yahoo)(\.[a-zA-Z0-9À-ÿ\-_\.]{1,3})?$/;
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             return emailRegex.test(email);
         }
 
@@ -44,7 +43,7 @@
             const message = formData.get('message');
             const userData = {name, email, message};
 
-            fetch ('https://reqres.in/api/users', {
+            fetch('https://reqres.in/api/users', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -58,10 +57,10 @@
                 return response.json()
             })
             .then(user => {
-                console.log('Utilisateur trouvé!')
+                console.log('Utilisateur trouvé!', user);
             })
             .catch(error => {
-                console.log('Erreur trouver...')
+                console.log('Erreur en cours...', error);
             });
         }
     </script>

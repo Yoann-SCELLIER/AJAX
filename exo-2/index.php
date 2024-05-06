@@ -45,10 +45,10 @@
                 return response.json()
             })
             .then(user => {
-                console.log('Utilisateur trouvé!')
+                console.log('Utilisateur trouvé!', user);
             })
             .catch(error => {
-                console.log('Erreur trouvé!')
+                console.log('Erreur trouvé!', error);
             });
         }
     </script>

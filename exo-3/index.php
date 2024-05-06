@@ -68,12 +68,12 @@
 
         // Affichage d'un message lorsque l'utilisateur est trouvé
         .then(user => {
-            console.log('Utilisateur trouvé');
+            console.log('Utilisateur trouvé', user);
         })
 
         // Capture et affichage des erreurs
         .catch(error => {
-            console.log('Erreur en cours...');
+            console.log('Erreur en cours...', error);
         });
     }
 </script>
