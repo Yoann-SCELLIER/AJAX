@@ -20,7 +20,7 @@
         // création d'une constante qui créer un objet
         const xhttp = new XMLHttpRequest();
 
-        // création d'une requête qui prépare tout changement de contenu
+        // création d'une requête qui prépare tout changement de contenu 
         xhttp.onreadystatechange = () => {
 
             // création d'une condition qui vérifie si tout est bon et passe la réponse en "innerHTML"
