@@ -25,7 +25,7 @@
     <!-- Emplacement pour le script -->
     <script> 
         // API : https://reqres.in/api/users
-        // Code Regex : /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+        // Code Regex : /^[^\s@]+@[^\s@]+\.[^\s@]+$/ 
 
         function isValidEmail(email) {
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
