@@ -24,8 +24,8 @@
         xhttp.onreadystatechange = () => {
 
             // création d'une condition qui vérifie si tout est bon et passe la réponse en "innerHTML"
-            if(xhttp.readyState === 4 &
-                xhttp.status === 200) {
+            if(xhttp.readyState === 4) {
+                if(xhttp.status === 200) {
                     document.getElementById("content").innerHTML = xhttp.responseText;
 
                 // Sinon affiche l'erreur en "console.log" et dans "alert"
@@ -33,6 +33,7 @@
                     console.error("Erreur" + xhttp.status + "" + xhttp.statusText);
                     alert("Attention une erreur est survenue!");
                 }
+            }
         }
 
         // création d'une requête pour récupérer la demande du fichier
