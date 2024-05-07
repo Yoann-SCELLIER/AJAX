@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulaire d'envoi de données</title>
     <link rel="stylesheet" href="styles.css"> 
-    <!-- Ajout du lien CSS pour les couleurs de validation ou de inavlidation du formulaire -->
+    <!-- Ajout du lien CSS pour les couleurs de validation ou de inavlidation du formulaire --> 
 </head>
 <body>
     <h2>Formulaire d'envoi de données</h2>
