@@ -1,0 +1,29 @@
+/* Style pour les champs invalides */
+input:invalid,
+textarea:invalid {
+    border-color: #ff0000; /* Rouge pour indiquer un champ invalide */
+}
+
+/* Style pour les messages d'erreur */
+input:invalid + span,
+textarea:invalid + span {
+    color: #ff0000; /* Rouge pour le texte d'erreur */
+    font-size: 12px;
+    display: block;
+    margin-top: 5px;
+}
+
+/* Style pour les champs valides */
+input:valid,
+textarea:valid {
+    border-color: #00ff00; /* Vert pour indiquer un champ valide */
+}
+
+/* Style pour les messages de validation */
+input:valid + span,
+textarea:valid + span {
+    color: #00ff00; /* Vert pour le texte de validation */
+    font-size: 12px;
+    display: block;
+    margin-top: 5px;
+}
