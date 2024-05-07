@@ -39,7 +39,7 @@
 
         // affiche avec ".then" en console.log la réponse
         .then(users => {
-          console.log('Utilisateur trouvé :', users);
+          console.log('Utilisateur trouvé :', users); 
         })
 
         // affiche avec ".catch" l'erreur capturé et afficher avecc le console.log
