@@ -29,7 +29,7 @@
 
             const formData = new FormData(event.target);
             const userData = {};
-            formData.forEach((value, key) => userData[key] = value);
+            formData.forEach((value, key) => userData[key] = value); 
 
             fetch('https://reqres.in/api/users', {
                 method: 'POST',
