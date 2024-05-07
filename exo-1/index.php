@@ -23,11 +23,11 @@
       // utilisation fetch pour l'envoi en "GET" vers le fichier JSON ou lien
       fetch('https://jsonplaceholder.typicode.com/users')
 
-        // on utilise ".then" avec le paramêtre "response" fléché.
+        // on utilise ".then" avec le paramêtre "response" fléché. 
         .then(response => {
 
-          // "si", on vérifie en paramétre avec "!" pour voir si la réponse et mauvaise
-          if (!response.ok) {
+          // "si", on vérifie en paramétre avec "!" pour voir si la réponse et mauvaise 
+          if (!response.ok) { 
 
             // "throw new Error" qui prépare le message d'erreur.
             throw new Error('Erreur de récupération des données.');

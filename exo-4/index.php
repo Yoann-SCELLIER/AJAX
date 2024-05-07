@@ -9,7 +9,7 @@
     <h2>Formulaire d'envoi de données</h2>
     <form id="userForm">
         <label for="name">Nom :</label>
-        <input type="text" id="name" name="name" required><br><br>
+        <input type="text" id="name" name="name" required><br><br> 
         
         <label for="email">E-mail :</label>
         <input type="email" id="email" name="email" required><br><br>
@@ -23,7 +23,7 @@
     </form>
 
     <!-- Emplacement pour le script -->
-    <script>
+    <script> 
         // API : https://reqres.in/api/users
         // Code Regex : /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 

@@ -19,7 +19,7 @@
 
         <!-- Ajoute d'autres champs au besoin -->
 
-        <button type="submit">Envoyer</button>
+        <button type="submit">Envoyer</button> 
     </form>
 
     <script>
