@@ -14,7 +14,7 @@
 
     <script>
 
-        // création d'une fonction nommé "loadContent" 
+        // création d'une fonction nommé "loadContent"
         function loadContent() {
 
             // création d'une constante qui créer un objet
