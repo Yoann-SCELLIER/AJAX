@@ -17,7 +17,7 @@
         // création d'une fonction nommé "loadContent"
         function loadContent() {
 
-            // création d'une variable qui créer un objet pour gérer la requête AJAX 
+            // création d'une variable qui créer un objet pour gérer la requête AJAX
             var xhttp = new XMLHttpRequest();
 
             // création d'un gestionnaire d'événement pour chaque changement de la requête
