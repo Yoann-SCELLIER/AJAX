@@ -34,7 +34,7 @@
         // Empêche le comportement par défaut de soumission du formulaire (rechargement de la page)
         event.preventDefault();
 
-        // Création de constantes pour récupérer les valeurs des champs de formulaire
+        // Création de constantes pour récupérer les valeurs des champs de formulaire 
         const formData = new FormData(event.target);
         const name = formData.get('name');
         const email = formData.get('email');
