@@ -1,25 +1,37 @@
+// Ajout d'un écouteur d'événement au formulaire avec l'ID "createForm" pour l'événement "submit"
 document.getElementById('createForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Empêcher la soumission du formulaire par défaut
+    // Empêcher le comportement par défaut du formulaire de se produire (rechargement de la page)
+    event.preventDefault();
 
-    // Récupérer les données du formulaire
+    // Récupération des données du formulaire
     var formData = new FormData(this);
 
-    // Envoyer la requête AJAX
+    // Création d'une requête AJAX
     var xhr = new XMLHttpRequest();
-    xhr.open('POST', 'create_entry.php', true); // Supposant que vous avez un script côté serveur pour gérer la création
+
+    // Spécification des détails de la requête (méthode, URL, asynchrone)
+    xhr.open('POST', 'create_entry.php', true);
+
+    // Gestion de la réponse de la requête
     xhr.onload = function() {
+        // Si le statut de la réponse est 200 (OK)
         if (xhr.status === 200) {
-            // La requête a réussi, faire quelque chose avec la réponse
+            // Affichage de la réponse dans la console
             console.log(xhr.responseText);
+            // Affichage d'une alerte indiquant que l'entrée a été créée avec succès
             alert('Entrée créée avec succès!');
         } else {
-            // La requête a échoué
+            // Si le statut de la réponse n'est pas 200, affichage d'une alerte avec le statut du code de la réponse
             alert('Erreur: ' + xhr.statusText);
         }
     };
+
+    // Gestion des erreurs pendant la requête
     xhr.onerror = function() {
-        // Erreur pendant la requête
+        // Affichage d'une alerte en cas d'erreur pendant la requête
         alert('La requête a échoué');
     };
+
+    // Envoi de la requête avec les données du formulaire
     xhr.send(formData);
 });
